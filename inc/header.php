@@ -135,7 +135,7 @@ header("Cache-Control: max-age=2592000");
 					if ($login_check == false) {
 						echo '<a class="badge bg-dark text-white ms-1 rounded-pill" href="login.php">Đăng nhập</a></div>';
 					} else {
-						echo '<a href="?customer_id=' . Session::get('customer_id') . '">Đăng xuất</a></div>';
+						echo '<a class="badge bg-dark text-white ms-1 rounded-pill" href="?customer_id=' . Session::get('customer_id') . '">Đăng xuất</a></div>';
 					}
 					?>
 				</div>
@@ -202,8 +202,8 @@ header("Cache-Control: max-age=2592000");
 							if ($login_check == false) {
 								echo '';
 							} else {
-								echo '<li><a href="profile.php">Tài khoản</a> </li>
-								<li><a href="orderdetails.php">Hóa đơn</a> </li>';
+								echo '<li><a class="navbar-brand" href="profile.php">Tài khoản</a> </li>
+								<li><a class="navbar-brand" href="orderdetails.php">Hóa đơn</a> </li>';
 							}
 							?>
 							<li class="nav-item"><a class="navbar-brand" href="contact.php">Liên hệ</a></li>
