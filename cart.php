@@ -83,7 +83,7 @@ if (!isset($_GET['id'])) {
 				?>
 					<table style="float:right;text-align:left;" width="40%">
 						<tr>
-							<th>Tạm tính : </th>
+							<th>Tổng tiền : </th>
 							<td><?php
 
 								echo $fm->format_currency($subtotal) . " " . "VNĐ";
@@ -91,18 +91,7 @@ if (!isset($_GET['id'])) {
 								Session::set('qty', $qty);
 								?></td>
 						</tr>
-						<tr>
-							<th>VAT : </th>
-							<td>10%</td>
-						</tr>
-						<tr>
-							<th>Thành tiền :</th>
-							<td><?php
-								$vat = $subtotal * 0.1;
-								$gtotal = $subtotal + $vat;
-								echo $fm->format_currency($gtotal) . " " . "VNĐ";
-								?></td>
-						</tr>
+						
 					</table>
 				<?php
 				} else {

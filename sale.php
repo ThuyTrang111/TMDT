@@ -1,17 +1,9 @@
-
-
 <?php
 include 'inc/header.php';
 include 'inc/slider.php';
 
 ?>
-<?php
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 
-	$quantity = $_POST['quantity'];
-	$insertCart = $ct->add_to_cart($quantity, $id);
-}
-?>
 
 <div class="main">
 	<div class="content">
@@ -31,8 +23,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 					<div class="grid_1_of_4 images_1_of_4">
 						<a href="details.php?proid=<?php echo $result['productId'] ?>"><img src="admin/uploads/<?php echo $result['image'] ?>"  alt="" /></a>
 						<h2><?php echo $result['productName'] ?></h2>
-						<p><span class="price"><?php echo $fm->format_currency($result['price']) . " " . "VNĐ" ?></span></p>
-						<div class="button"><span><a href="details.php?proid=<?php echo $result['productId'] ?>" class="details">Chi tiết</a></span></div>
+						<h2><strong><del><?php echo $result['sale'] . " " . "VNĐ" ?></del></strong></h2>
+					<p><span class="price"><?php echo $fm->format_currency($result['price']) . " " . "VNĐ" ?></span></p>
+						
+						<div class="button"><span><a href="detailsl.php?proid=<?php echo $result['productId'] ?>" class="details">Chi tiết</a></span></div>
 						
 
 					</div>
@@ -57,8 +51,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 					<div class="grid_1_of_4 images_1_of_4">
 						<a href="details.php?proid=<?php echo $result_new['productId'] ?>"><img src="admin/uploads/<?php echo $result_new['image'] ?>" alt="" /></a>
 						<h2><?php echo $result_new['productName'] ?></h2>
+						<h2><strong><del><?php echo $result_new['sale'] . " " . "VNĐ"  ?></del></strong></h2>
 						<p><span class="price"><?php echo $fm->format_currency($result_new['price']) . " " . "VNĐ" ?></span></p>
-						<div class="button"><span><a href="details.php?proid=<?php echo $result_new['productId'] ?>" class="details">Chi tiết</a></span></div>
+						<div class="button"><span><a href="detailsl.php?proid=<?php echo $result_new['productId'] ?>" class="details">Chi tiết</a></span></div>
 						
 						
 					</div>
@@ -95,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 			echo '<p>Trang : </p>';
 			for ($i = 1; $i <= $product_button; $i++) {
 			?>
-				<a class="phantrang" <?php if ($i == $trang) {echo 'style="background:orange"';} ?> href="index.php?trang=<?php echo $i ?>"><?php echo $i ?></a>
+				<a class="phantrang" <?php if ($i == $trang) {echo 'style="background:orange"';} ?> href="sale.php?trang=<?php echo $i ?>"><?php echo $i ?></a>
 			<?php
 			}
 			?>

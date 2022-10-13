@@ -58,6 +58,7 @@ header("Cache-Control: max-age=2592000");
 	<link href='http://fonts.googleapis.com/css?family=Doppio+One' rel='stylesheet' type='text/css'>
 
 
+
 	<!-- Latest compiled and minified JavaScript -->
 	<script type="text/javascript">
 		$(document).ready(function($) {
@@ -194,7 +195,7 @@ header("Cache-Control: max-age=2592000");
 									?>
 								</ul>
 							</li>
-							<li class="nav-item"><a class="navbar-brand" href="cart.php">Sách giảm giá</a></li>
+							<li class="nav-item"><a class="navbar-brand" href="sale.php">Sách giảm giá</a></li>
 							
 
 							<?php

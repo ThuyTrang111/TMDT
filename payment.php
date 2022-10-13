@@ -49,7 +49,31 @@
 	    		<div class="clear"></div>
 	    		<div class="wrapper_method">
 		    		<h3 class="payment">Chọn phương thức thanh toán:</h3>
-		    		<a href="offlinepayment.php">Thanh toán trực tiếp</a>
+					<div class="m-2 d-flex">
+				
+   <fieldset class="border p-3 mr-2 col-6">    
+      <legend class="small text-primary fw-bold">Phương thức thanh toán</legend>
+      <div class="form-group row">
+        <p><input type="radio" name="phuongthuctt" value="ck"> Chuyển khoản</p>
+        <p><input type="radio" name="phuongthuctt" value="khinhan" > Khi nhận hàng</p>
+        <p><input type="radio" name="phuongthuctt" value="onepay"> Onepay</p>
+        
+      </div>
+    </fieldset>
+	
+	
+    <fieldset class="border p-3 ml-3 col-6">    
+       <legend class="small text-primary fw-bold">Phương thức giao hàng</legend>
+       <div class="form-group row">
+          <p><input type="checkbox" name="phuongthuctt" value="ghnhanh"> Giao hàng nhanh</p>
+         <p><input type="checkbox" name="phuongthuctt" value="ghtietkiem"> Giao hàng tiết kiệm</p>
+         <p><input type="checkbox" name="phuongthuctt" value="vnpost"> VN Post</p>
+         <p><input type="checkbox" name="phuongthuctt" value="viettel"> Viettel</p>
+       </div>
+    </fieldset>    
+
+</div>
+		    		<a href="offlinepayment.php">Thanh toán</a>
 		    	<!-- 	<a href="onlinepayment.php"Thanh toán Online</a><br><br><br> -->
 		    		<a style="background:grey" href="cart.php"> << Quay về</a>
 		    	</div>

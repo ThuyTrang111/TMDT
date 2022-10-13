@@ -167,10 +167,18 @@
                 </tr>
 				<tr>
                     <td>
-                        <label>Giá</label>
+                        <label>Giá giảm</label>
                     </td>
                     <td>
                         <input type="text" value="<?php echo $result_product['price'] ?>" name="price" class="medium" />
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        <label>Giá gốc</label>
+                    </td>
+                    <td>
+                        <input type="text" value="<?php echo $result_product['sale'] ?>" name="sale" class="medium" />
                     </td>
                 </tr>
             

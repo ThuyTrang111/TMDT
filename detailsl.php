@@ -1,6 +1,6 @@
 <?php
 include 'inc/header.php';
-// include 'inc/slider.php';
+// include 'inc/slider.php'<p><?php echo $fm->textShorten($result_details['product_desc'], 150) 
 ?>
 <?php
 
@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
 }
 ?>
 
-
+							
 
 <div class="main">
 	<div class="content">
@@ -60,13 +60,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
 
 
 						</style>
-						
+					
 						<div class="desc span_3_of_2">
 							<h2 class = "font"><strong><?php echo $result_details['productName'] ?></strong></h2>
-				
+							
+							
 							<div class="price">
 								
-								<p>Giá: <span><?php echo $fm->format_currency($result_details['price']) . " " . "VNĐ" ?></span></p>
+								<p>Giá: <span><del><?php echo $result_details['sale'] . " " . "VNĐ"  ?></del></span> &emsp;<span><?php echo $fm->format_currency($result_details['price']) . " " . "VNĐ" ?></span></p>
 								<p>Tác giả: <span><?php echo $result_details['tacgia'] ?></span></p>
 								<p>NXB: <span><?php echo $result_details['nxb'] ?></span> &emsp;&emsp; Năm xuất bản: <span><?php echo $result_details['namxb'] ?></span></p>
 								
@@ -75,7 +76,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
 								<p>Số trang: <span><?php echo $result_details['trang'] ?></span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Danh mục: <span><?php echo $result_details['catName'] ?></span></p>
 								
 								<p>Ngôn ngữ:<span><?php echo $result_details['brandName'] ?></span></p>
-								
 							</div>
 							<div class="add-cart">
 								<form action="" method="post">
@@ -120,17 +120,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
 					}
 					?>
 				</ul>
+
 			</div>
-			
-			<div class="rightsidebar span_3_of_1">
-				
-				<ul>
-					<img src="/admin/uploads/vn.png" alt=""/>
-				</ul>
-			</div>
-			
 		</div>
-		
 		
 		<div class="cmt">
 			<div class="row">
@@ -160,7 +152,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
 			}
 		?>
 			</div>
-			
 			<div class="content_top">
 			<div class="heading">
 				<h3>Sản phẩm tương tự</h3>
@@ -177,7 +168,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
 					<div class="grid_1_of_4 images_1_of_4">
 						<a href="details.php?proid=<?php echo $result['productId'] ?>"><img src="admin/uploads/<?php echo $result['image'] ?>"  alt="" /></a>
 						<h2><?php echo $result['productName'] ?></h2>
-						<p><span class="price"><?php echo $fm->format_currency($result['price']) . " " . "VNĐ" ?></span></p>
+						<h2><strong><del><?php echo $result['sale'] . " " . "VNĐ" ?></del></strong></h2>
+					<p><span class="price"><?php echo $fm->format_currency($result['price']) . " " . "VNĐ" ?></span></p>
+						
 						
 						
 

@@ -42,6 +42,7 @@ class product
 		$trongluong = mysqli_real_escape_string($this->db->link, $data['trongluong']);
 		$kichthuoc = mysqli_real_escape_string($this->db->link, $data['kichthuoc']);
 		$trang = mysqli_real_escape_string($this->db->link, $data['trang']);
+		$sale = mysqli_real_escape_string($this->db->link, $data['sale']);
 
 		//Kiem tra hình ảnh và lấy hình ảnh cho vào folder upload
 		$permited  = array('jpg', 'jpeg', 'png', 'gif');
@@ -54,12 +55,12 @@ class product
 		$unique_image = substr(md5(time()), 0, 10) . '.' . $file_ext;
 		$uploaded_image = "uploads/" . $unique_image;
 
-		if ($productName == "" || $brand == "" || $category == "" || $product_desc == "" || $price == "" || $type == "" || $file_name == ""|| $tacgia == ""|| $nxb == ""|| $namxb == ""|| $trongluong == ""|| $kichthuoc == ""|| $trang == "") {
+		if ($productName == "" || $brand == "" || $category == "" || $product_desc == "" || $price == "" || $type == "" || $file_name == ""|| $tacgia == ""|| $nxb == ""|| $namxb == ""|| $trongluong == ""|| $kichthuoc == ""|| $trang == ""|| $sale == "") {
 			$alert = "<span class='error'>Hãy điền đủ thông tin sản phẩm</span>";
 			return $alert;
 		} else {
 			move_uploaded_file($file_temp, $uploaded_image);
-			$query = "INSERT INTO tbl_product(productName,brandId,catId,product_desc,price,type,image,tacgia,nxb,namxb,trongluong,kichthuoc,trang) VALUES('$productName','$brand','$category','$product_desc','$price','$type','$unique_image','$tacgia','$nxb','$namxb','$trongluong','$kichthuoc','$trang')";
+			$query = "INSERT INTO tbl_product(productName,brandId,catId,product_desc,price,type,image,tacgia,nxb,namxb,trongluong,kichthuoc,trang,sale) VALUES('$productName','$brand','$category','$product_desc','$price','$type','$unique_image','$tacgia','$nxb','$namxb','$trongluong','$kichthuoc','$trang','$sale')";
 			$result = $this->db->insert($query);
 			if ($result) {
 				$alert = "<span class='success'>Thêm sản phẩm thành công</span>";
@@ -192,6 +193,7 @@ class product
 		$trongluong = mysqli_real_escape_string($this->db->link, $data['trongluong']);
 		$kichthuoc = mysqli_real_escape_string($this->db->link, $data['kichthuoc']);
 		$trang = mysqli_real_escape_string($this->db->link, $data['trang']);
+		$sale = mysqli_real_escape_string($this->db->link, $data['sale']);
 		//Kiem tra hình ảnh và lấy hình ảnh cho vào folder upload
 		$permited  = array('jpg', 'jpeg', 'png', 'gif');
 
@@ -206,7 +208,7 @@ class product
 		$uploaded_image = "uploads/" . $unique_image;
 
 
-		if ($productName == "" || $brand == "" || $category == "" || $product_desc == "" || $price == "" || $type == ""|| $file_name == ""|| $tacgia == ""|| $nxb == ""|| $namxb == ""|| $trongluong == ""|| $kichthuoc == ""|| $trang == "") {
+		if ($productName == "" || $brand == "" || $category == "" || $product_desc == "" || $price == "" || $type == ""|| $file_name == ""|| $tacgia == ""|| $nxb == ""|| $namxb == ""|| $trongluong == ""|| $kichthuoc == ""|| $trang == ""|| $sale == "") {
 			$alert = "<span class='error'>Điền đủ thông tin</span>";
 			return $alert;
 		} else {
@@ -235,6 +237,7 @@ class product
 					trongluong = '$trongluong',
 					kichthuoc = '$kichthuoc',
 					trang ='$trang',
+					sale ='$sale',
 					
 					product_desc = '$product_desc'
 					WHERE productId = '$id'";
@@ -253,6 +256,7 @@ class product
 					trongluong = '$trongluong',
 					kichthuoc = '$kichthuoc',
 					trang ='$trang',
+					sale ='$sale',
 					
 					product_desc = '$product_desc'
 

@@ -115,14 +115,14 @@
 								?></td>
 							</tr>
 							<tr>
-								<th>VAT : </th>
-								<td>10% (<?php echo $fm->format_currency($vat = $subtotal * 0.1).' '.'VNĐ'; ?>)</td>
+								<th>Phí vận chuyển : </th>
+								<td><?php echo $fm->format_currency($vat = $subtotal * 0.05).' '.'VNĐ'; ?></td>
 							</tr>
 							<tr>
 								<th>Thành tiền :</th>
 								<td><?php 
 
-								$vat = $subtotal * 0.1;
+								$vat = $subtotal * 0.05;
 								$gtotal = $subtotal + $vat;
 								echo $fm->format_currency($gtotal).' '.'VNĐ' ;
 								?></td>
